@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres:
+    build: ./docker
+    image: car-design-img
+    container_name: car-postgres
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./docker/init:/docker-entrypoint-initdb.d
+      - car-data:/var/lib/postgresql/data
+    ports:
+      - '5555:5432'
+    restart: always
+
+volumes:
+  car-data:
+    driver: local
