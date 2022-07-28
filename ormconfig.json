@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5555,
+    "username": "car_admin",
+    "password": "car_psql",
+    "database": "car_dev_database",
+    "entities": ["dist/entities/**/*.entity.js"],
+    "migrations": ["dist/migrations/**/*.js"],
+    "logging": true,
+    "synchronize": true
+}
